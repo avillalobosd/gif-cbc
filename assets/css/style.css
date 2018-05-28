@@ -1,0 +1,33 @@
+#botonesAqui{
+ background-color: #72b2e0;
+
+}
+.botonS{
+margin-left: 10px;
+margin-top: 10px;
+
+}
+
+.nuevoAnimal{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+
+
+.heading{
+    padding-top: 20px;
+    background-color: black;
+    }
+
+.gif-display{
+
+    align-items: bottom;
+
+    }
+img{
+    width: 100%;
+}
+.gifs-aqui{
+
+    margin-left: 30px;
+}
