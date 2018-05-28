@@ -8,9 +8,9 @@ function inicio(){
 for (var i=0; i<nombreGif.length; i++){
 var a = $("<button>");
 a.addClass("button"+numBoton);
-a.addClass("botonS btn btn-success");
+a.addClass("botonS btn btn-secondary");
 a.attr("data-name", nombreGif[i]);
-a.text(nombreGif[i]);
+a.text(nombreGif[i].toUpperCase());
 $(".botones").append(a);
 numBoton++;
 }}
@@ -22,9 +22,9 @@ $(".botonAgregar").click(function(){
   }else {
   var a = $("<button>");
   a.addClass("button"+numBoton);
-  a.addClass("botonS btn btn-success");
+  a.addClass("botonS btn btn-warning");
   a.attr("data-name", $(".nuevoAnimal").value);
-  a.text($(".nuevoAnimal").val().trim());
+  a.text($(".nuevoAnimal").val().trim().toUpperCase());
   $(".botones").append(a);
   numBoton++;
   $(".nuevoAnimal").val("");}
@@ -33,16 +33,16 @@ $(".botonAgregar").click(function(){
 
 
 $(document).on("click",".botonS",function() {
+ 
+
   var nextGif = $(this).text();
-  var queryURL = "https://api.giphy.com/v1/gifs/search?q="+nextGif+"&api_key=VrtzCO6UTsjq6GOcqusdOQxFzDczzGTx&limit=6s";
-console.log(queryURL);
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q="+nextGif+"&api_key=VrtzCO6UTsjq6GOcqusdOQxFzDczzGTx&limit=10s";
   $.ajax({
     url: queryURL,
     method: "GET"
   })
     .then(function(response) {
       var results = response.data;
-      console.log(results);
 
       for (var i = 0; i < results.length; i++) {
         var gifDiv = $("<div class='col-2 gif-display'>");
@@ -62,7 +62,12 @@ console.log(queryURL);
         gifDiv.prepend(p);
 
         $(".gifs-aqui").prepend(gifDiv);
+        
       }
+  var division = $("<div class='col-12 division'>");
+  var textodiv="GIFS ABOUT "+nextGif.toUpperCase();
+  division.prepend(textodiv);
+  $(".gifs-aqui").prepend(division);
     });
 
 });

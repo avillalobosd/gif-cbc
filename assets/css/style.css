@@ -17,17 +17,40 @@ margin-top: 10px;
 .heading{
     padding-top: 20px;
     background-color: black;
+    border-bottom-style: solid;
+    border-width: 10px;
+    border-color: gray;
     }
 
 .gif-display{
 
     align-items: bottom;
-
+    text-align: center;
+    color:white;
     }
 img{
     width: 100%;
 }
 .gifs-aqui{
 
-    margin-left: 30px;
+   
 }
+
+.division{
+    text-align: center;
+    background-color: gray;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+body{
+    background: black;
+}
+
+.titulo{
+
+    text-align: center;
+    color:white;
+    font-size: 40px;
+    }
